@@ -25,7 +25,6 @@ passiscovid:boolean=false
 constructor(private router:Router, private dataservice:DataserviceService){}
 
 
-
 handlePassGender(event: Event, index: number): void {
   const target = event.target as HTMLInputElement;
   if (!this.passdetails[index]) {

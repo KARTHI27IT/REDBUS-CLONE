@@ -135,7 +135,6 @@ body {
     font-size: 19px;
     font-weight: 700;
     line-height: 1.26;
-    color: #3e3e52;
   }
   .banner_chip {
     display: flex;
@@ -153,7 +152,6 @@ body {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.43;
-    color: #747f8d;
     margin: 1em 0;
   }
   .payment__fullContainer_leftContainer_eachPaymentInstruments_new {
@@ -208,13 +206,11 @@ body {
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
-    background-color: rgb(250, 229, 229);
     padding: 1.12em;
     min-height: 1.76em;
     -moz-box-pack: center;
   }
   .passangerName {
-    color: rgb(116, 127, 141);
     font-size: 14px;
     line-height: 1.33;
     font-weight: 400;

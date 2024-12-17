@@ -33,6 +33,9 @@ import { PaymentPageComponent } from './Component/payment-page/payment-page.comp
 import { ProfilePageComponent } from './Component/profile-page/profile-page.component';
 import { MyTripComponent } from './Component/profile-page/my-trip/my-trip.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
+import { Virtual360Component } from './virtual360/virtual360.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,9 @@ import { HttpClientModule } from '@angular/common/http';
     BusBookingFormComponent,
     PaymentPageComponent,
     ProfilePageComponent,
-    MyTripComponent
+    MyTripComponent,
+    ThemeToggleComponent,
+    Virtual360Component,
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,17 @@
+.bus-booking-form{
+  width: 450px;
+  padding-bottom: 10px;
+  background: linear-gradient(135deg, #0F172A, #1E293B);
+}
 body {
-    /* font-family: "Montserrat", sans-serif; */
+    font-family: "Montserrat", sans-serif; 
     font-weight: 400;
   }
   .passenger-main-title {
     text-align: center;
-    background-color: white;
     font-size: 19px;
     margin: 0;
     padding-bottom: 2px;
-    color: #4a4a4a;
   }
   .passanger-info-title {
     display: flex;
@@ -22,7 +25,8 @@ body {
     margin: 20px 20px;
     box-shadow: 0 0 4px 0 hsla(0, 0%, 64%, 0.5);
     padding: 20px 40px 20px 40px;
-    background: #fff;
+    background-color: white;
+    
   }
   .form-label {
     margin-top: 20px;

@@ -1,0 +1,13 @@
+.virtual360deg{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.virtual360deg iframe {
+    box-shadow: 2px 4px 20px white;
+    border-bottom: 0.3px white solid;
+    border-right: 0.5px white solid;
+    border-top: 0.5px solid black;
+    border-left: 0.3px solid black;
+    border-radius: 10px;
+}

@@ -1,0 +1,5 @@
+#toggleButton {
+    position: absolute;  /* Adjust as needed */
+    right: 0;   /* Adjust as needed */
+    z-index: 100;
+}

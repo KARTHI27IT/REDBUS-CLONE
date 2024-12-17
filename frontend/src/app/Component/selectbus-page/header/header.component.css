@@ -1,5 +1,4 @@
 .HeaderOne{
-    background-color: #f8f4f4;
     padding:10px 10px;
     margin-bottom: 10px;
 }
@@ -16,7 +15,6 @@
 .HeaderTwo > button{
     padding: 5px;
     width: 100px;
-    background-color: #f8f4f4;
     border: 1px solid black;
     border-radius: 2px;
     outline:none

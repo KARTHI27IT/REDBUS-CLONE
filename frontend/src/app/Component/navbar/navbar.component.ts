@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,signal } from '@angular/core';
 declare var google:any;
 import { CustomerService } from '../../service/customer.service';
 import { Customer } from '../../model/customer.model';
@@ -66,4 +66,7 @@ handlelogout(){
 navigate(route:string){
   this.router.navigate([route])
 }
+
+
+
 }
