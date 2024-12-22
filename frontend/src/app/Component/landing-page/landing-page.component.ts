@@ -2,23 +2,28 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css'
+  styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent {
-  fromoption: string = ''
-  tooption: string = ''
-  date: string = ''
+  fromoption: string = '';
+  tooption: string = '';
+  date: string = '';
+
   constructor(private router: Router, public dialog: MatDialog) { }
+
   fromEvent(option: string) {
     this.fromoption = option;
-    console.log(this.fromoption)
+    console.log(this.fromoption);
   }
+
   toEvent(option: string) {
     this.tooption = option;
   }
+
   matchDate(event: any) {
     if (event.value) {
       const date = new Date(event.value);
@@ -29,27 +34,26 @@ export class LandingPageComponent {
     } else {
       this.date = 'null';
     }
-    console.log(this.date)
+    console.log(this.date);
   }
+
   submit() {
     if (this.fromoption && this.tooption && this.date) {
-      if (this.fromoption === 'Delhi' && this.tooption === 'Jaipur' || this.fromoption === 'Mumbai' && this.tooption === 'Goa' || this.fromoption === 'Bangalore' && this.tooption === 'Mysore' || this.fromoption === 'Kolkata' && this.tooption === 'Darjeeling' || this.fromoption === 'Chennai' && this.tooption === 'Pondicherry') {
-        this.router.navigate(['/select-bus'],{
-          queryParams:{
-            departure:this.fromoption,
-            arrival:this.tooption,
-            date:this.date
+      if (
+        (this.fromoption === 'Delhi' && this.tooption === 'Goa') || 
+        (this.fromoption === 'Mumbai' && this.tooption === 'Darjeeling')
+      ) {
+        this.dialog.open(DialogComponent, {
+          data: {
+            message: 'Do you want to search for available buses for this route?',
+            title: 'Confirm Search',
+            cancel: 'Cancel',
+            confirm: 'Confirm'
           }
-        });
-      } else {
-        const dialogRef = this.dialog.open(DialogComponent);
-
-        dialogRef.afterClosed().subscribe(result => {
-          console.log(`Dialog result: ${result}`);
         });
       }
     } else {
-      alert("fill up the details!!!")
+      alert('Please fill in all details.');
     }
   }
 }

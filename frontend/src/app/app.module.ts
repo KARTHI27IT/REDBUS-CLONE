@@ -32,9 +32,17 @@ import { BusBookingFormComponent } from './Component/selectbus-page/right/bus-bo
 import { PaymentPageComponent } from './Component/payment-page/payment-page.component';
 import { ProfilePageComponent } from './Component/profile-page/profile-page.component';
 import { MyTripComponent } from './Component/profile-page/my-trip/my-trip.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
 import { Virtual360Component } from './virtual360/virtual360.component';
+
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+// HttpLoaderFactory function
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -59,6 +67,7 @@ import { Virtual360Component } from './virtual360/virtual360.component';
     MyTripComponent,
     ThemeToggleComponent,
     Virtual360Component,
+    
   ],
   imports: [
     BrowserModule,
@@ -74,7 +83,14 @@ import { Virtual360Component } from './virtual360/virtual360.component';
     CommonModule,
     MatSidenavModule,
     MatDividerModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    })
   ],
   providers: [provideNativeDateAdapter()],
   bootstrap: [AppComponent]
