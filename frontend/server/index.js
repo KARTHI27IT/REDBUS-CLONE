@@ -36,7 +36,6 @@ app.post("/virtualLook", async (req, res) => {
         if (!bus) {
             return res.status(404).json({ status: false, message: "No buses available" });
         }
-        console.log("bus:",bus);
         return res.status(200).json({ status: true, bus:bus});
     } catch (error) {
         console.error("Error fetching virtualLook:", error);

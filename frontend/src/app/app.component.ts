@@ -1,5 +1,4 @@
 import { Component, effect, HostBinding, Renderer2, signal } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';  // Import TranslateService for language switching
 
 @Component({
   selector: 'app-root',
@@ -18,12 +17,8 @@ export class AppComponent {
 
   constructor(
     private renderer: Renderer2, 
-    private translate: TranslateService // Inject TranslateService
   ) {
-    // Default language (You can set this based on user preference or browser settings)
-    this.translate.setDefaultLang('en');
 
-    // Get saved dark mode setting
     if (this.darkMode()) {
       this.renderer.addClass(document.body, 'dark');
     }
@@ -44,10 +39,5 @@ export class AppComponent {
     this.darkMode.update(mode => !mode);
   }
 
-  // Switch between different languages
-  switchLanguage(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    const language = selectElement.value; // Get the selected language
-    this.translate.use(language); // Change language using ngx-translate
-  }
+
 }

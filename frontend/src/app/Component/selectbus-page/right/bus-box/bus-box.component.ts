@@ -16,7 +16,7 @@ export class BusBoxComponent {
   @Input() filledseats: any[] = [];
   @Input() routedetails: any;
   @Input() busid: string = '';
-  
+
   avgrating: number = 0;
   totalreview: number = 0;
   seatprivce: number = 0;
