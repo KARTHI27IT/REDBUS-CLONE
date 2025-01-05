@@ -2,7 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const busSchema = require("./models/bus"); // Make sure busSchema is defined correctly
+const busSchema = require("./models/bus"); 
 
 const app = express();
 
